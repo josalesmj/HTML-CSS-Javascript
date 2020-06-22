@@ -7,11 +7,6 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
 
         <script type="text/javascript">
-            window.onload = function () {
-                
-
-
-            }
             function atualizaValor(rangeId, spanId) {
                 spanId.innerHTML = rangeId.value;
             }
@@ -21,11 +16,8 @@
             }
 
         </script>
-        
-
 
     </head>
-
 
     <body>
 
@@ -67,8 +59,7 @@
                     <div class="myInputRange">
                         <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange2"  onclick="atualizaValor(myRange2, valor2); atualizaCirculo(circulo2, myRange2);" onmousemove="atualizaValor(myRange2, valor2); atualizaCirculo(circulo2, myRange2);">
                         <h2 class="text">Valor</h2>
-                    </div>
-                        
+                    </div>             
                 </div>
             </div>
 
@@ -92,17 +83,5 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            //var slider = document.getElementById("myRange");
-            //var output = document.getElementById("demo");
-            //output.innerHTML = slider.value;
-
-            //Update the current slider value (each time you drag the slider handle)
-            //slider.oninput = function() {
-                //output.innerHTML = this.value;
-            //}
-        </script>
     </body>
-
 </html>
