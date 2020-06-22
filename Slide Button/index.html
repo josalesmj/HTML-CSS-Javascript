@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sliders Buttons</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+        <script type="text/javascript">
+            window.onload = function () {
+                
+
+
+            }
+            function atualizaValor(rangeId, spanId) {
+                spanId.innerHTML = rangeId.value;
+            }
+
+            function atualizaCirculo(myCircle, rangeId) {
+                myCircle.style.strokeDashoffset = 440 - (440 * Number(rangeId.value) / 100);
+            }
+
+        </script>
+        
+
+
+    </head>
+
+
+    <body>
+
+        <div class="container">
+            <div class="card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle id="circulo1" cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="slider">
+                            <div class="number">
+                                <span id="valor1"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myInputRange">
+                        <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange1" onclick="atualizaValor(myRange1, valor1); atualizaCirculo(circulo1, myRange1);" onmousemove="atualizaValor(myRange1, valor1); atualizaCirculo(circulo1, myRange1);">
+                        <h2 class="text">Valor</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle id="circulo2" cx="70" cy="70" r="70"></circle>
+                        </svg>
+
+                        <div class="slider">
+                            <div class="number">
+                                <span id="valor2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myInputRange">
+                        <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange2"  onclick="atualizaValor(myRange2, valor2); atualizaCirculo(circulo2, myRange2);" onmousemove="atualizaValor(myRange2, valor2); atualizaCirculo(circulo2, myRange2);">
+                        <h2 class="text">Valor</h2>
+                    </div>
+                        
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle id="circulo3" cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="slider">
+                            <div class="number">
+                                <span id="valor3"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myInputRange">
+                        <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange3"  onclick="atualizaValor(myRange3, valor3); atualizaCirculo(circulo1, myRange1);" onmousemove="atualizaValor(myRange3, valor3); atualizaCirculo(circulo3, myRange3);">
+                        <h2 class="text">Valor</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            //var slider = document.getElementById("myRange");
+            //var output = document.getElementById("demo");
+            //output.innerHTML = slider.value;
+
+            //Update the current slider value (each time you drag the slider handle)
+            //slider.oninput = function() {
+                //output.innerHTML = this.value;
+            //}
+        </script>
+    </body>
+
+</html>
