@@ -7,6 +7,19 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
 
         <script type="text/javascript">
+            window.onload = function () {
+                var elementos = [,,];
+                elementos = document.getElementsByClassName("box");
+                for(var i = 0; i < elementos.length; i++){
+                    var filhos = elementos[i].children;
+                    var rangeId = (filhos[1].children)[0];
+                    var spanId = (((filhos[0].children)[1]).children)[0];
+                    var myCircle = ((filhos[0].children)[0].children)[1];
+                    atualizaValor(rangeId, spanId);
+                    atualizaCirculo(myCircle, rangeId);
+                }
+            }
+            
             function atualizaValor(rangeId, spanId) {
                 spanId.innerHTML = rangeId.value;
             }
