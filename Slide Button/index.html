@@ -19,7 +19,7 @@
                     atualizaCirculo(myCircle, rangeId);
                 }
             }
-            
+
             function atualizaValor(rangeId, spanId) {
                 spanId.innerHTML = rangeId.value;
             }
@@ -29,25 +29,29 @@
             }
 
         </script>
+        
+
 
     </head>
+
 
     <body>
 
         <div class="container">
             <div class="card">
-                <div class="box">
+                <div id="box1" class="box">
                     <div class="percent">
                         <svg>
                             <circle cx="70" cy="70" r="70"></circle>
                             <circle id="circulo1" cx="70" cy="70" r="70"></circle>
                         </svg>
-                        <div class="slider">
-                            <div class="number">
-                                <span id="valor1"></span>
-                            </div>
+
+                        <div id="jesus" class="number">
+                            <span id="valor1"></span>
                         </div>
+
                     </div>
+
                     <div class="myInputRange">
                         <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange1" onclick="atualizaValor(myRange1, valor1); atualizaCirculo(circulo1, myRange1);" onmousemove="atualizaValor(myRange1, valor1); atualizaCirculo(circulo1, myRange1);">
                         <h2 class="text">Valor</h2>
@@ -56,37 +60,35 @@
             </div>
 
             <div class="card">
-                <div class="box">
+                <div id="box2" class="box">
                     <div class="percent">
                         <svg>
                             <circle cx="70" cy="70" r="70"></circle>
                             <circle id="circulo2" cx="70" cy="70" r="70"></circle>
                         </svg>
 
-                        <div class="slider">
-                            <div class="number">
-                                <span id="valor2"></span>
-                            </div>
+                        <div class="number">
+                            <span id="valor2"></span>
                         </div>
+
                     </div>
                     <div class="myInputRange">
                         <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange2"  onclick="atualizaValor(myRange2, valor2); atualizaCirculo(circulo2, myRange2);" onmousemove="atualizaValor(myRange2, valor2); atualizaCirculo(circulo2, myRange2);">
                         <h2 class="text">Valor</h2>
-                    </div>             
+                    </div>
+                        
                 </div>
             </div>
 
             <div class="card">
-                <div class="box">
+                <div id="box3" class="box">
                     <div class="percent">
                         <svg>
                             <circle cx="70" cy="70" r="70"></circle>
                             <circle id="circulo3" cx="70" cy="70" r="70"></circle>
                         </svg>
-                        <div class="slider">
-                            <div class="number">
-                                <span id="valor3"></span>
-                            </div>
+                        <div class="number">
+                            <span id="valor3"></span>
                         </div>
                     </div>
                     <div class="myInputRange">
@@ -97,4 +99,5 @@
             </div>
         </div>
     </body>
+
 </html>
