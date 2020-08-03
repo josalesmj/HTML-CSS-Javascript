@@ -7,33 +7,32 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
 
         <script type="text/javascript">
+            
             window.onload = function () {
-                var elementos = [];
-                elementos = document.getElementsByClassName("box");
-                for(var i = 0; i < elementos.length; i++){
-                    var filhos = elementos[i].children;
-                    var rangeId = (filhos[1].children)[0];
-                    var spanId = (((filhos[0].children)[1]).children)[0];
-                    var myCircle = ((filhos[0].children)[0].children)[1];
-                    atualizaValor(rangeId, spanId);
-                    atualizaCirculo(myCircle, rangeId);
-                }
+                let elBar = document.getElementsByClassName("myRangeBar")
+                let elSpan = document.getElementsByClassName("valor");
+                let elCirculo = document.getElementsByClassName("circulo");
+                            
+                Array.from(elBar).forEach( (el, index) => {
+                atualizaValor(el, elSpan[index], elCirculo[index]);
+                });
             }
 
-            function atualizaValor(rangeId, spanId) {
+            function atualiza (div) {
+                let elBar = div.getElementsByClassName("myRangeBar")
+                let elSpan = div.getElementsByClassName("valor");
+                let elCirculo = div.getElementsByClassName("circulo");
+                Array.from(elBar).forEach( (el, index) => atualizaValor(el, elSpan[index], elCirculo[index]));
+            }
+
+            function atualizaValor(rangeId, spanId, myCircle) {
                 spanId.innerHTML = rangeId.value;
-            }
-
-            function atualizaCirculo(myCircle, rangeId) {
                 myCircle.style.strokeDashoffset = 440 - (440 * Number(rangeId.value) / 100);
             }
-
+            
         </script>
         
-
-
     </head>
-
 
     <body>
 
@@ -43,19 +42,19 @@
                     <div class="percent">
                         <svg>
                             <circle cx="70" cy="70" r="70"></circle>
-                            <circle id="circulo1" cx="70" cy="70" r="70"></circle>
+                            <circle class="circulo" id="circulo1" cx="70" cy="70" r="70"></circle>
                         </svg>
 
                         <div class="number">
-                            <span id="valor1"></span>
+                            <span class="valor"></span>
                         </div>
-
                     </div>
 
                     <div class="myInputRange">
-                        <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange1" onclick="atualizaValor(myRange1, valor1); atualizaCirculo(circulo1, myRange1);" onmousemove="atualizaValor(myRange1, valor1); atualizaCirculo(circulo1, myRange1);">
+                        <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange1" onclick="atualiza(box1);" onmousemove="atualiza(box1);">
                         <h2 class="text">Valor</h2>
                     </div>
+
                 </div>
             </div>
 
@@ -64,16 +63,16 @@
                     <div class="percent">
                         <svg>
                             <circle cx="70" cy="70" r="70"></circle>
-                            <circle id="circulo2" cx="70" cy="70" r="70"></circle>
+                            <circle class="circulo" cx="70" cy="70" r="70"></circle>
                         </svg>
 
                         <div class="number">
-                            <span id="valor2"></span>
+                            <span class="valor"></span>
                         </div>
 
                     </div>
                     <div class="myInputRange">
-                        <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange2"  onclick="atualizaValor(myRange2, valor2); atualizaCirculo(circulo2, myRange2);" onmousemove="atualizaValor(myRange2, valor2); atualizaCirculo(circulo2, myRange2);">
+                        <input type="range" min="1" max="100" value="1" class="myRangeBar" onclick="atualiza(box2);" onmousemove="atualiza(box2);">
                         <h2 class="text">Valor</h2>
                     </div>
                         
@@ -85,19 +84,17 @@
                     <div class="percent">
                         <svg>
                             <circle cx="70" cy="70" r="70"></circle>
-                            <circle id="circulo3" cx="70" cy="70" r="70"></circle>
+                            <circle class="circulo" cx="70" cy="70" r="70"></circle>
                         </svg>
                         <div class="number">
-                            <span id="valor3"></span>
+                            <span class="valor"></span>
                         </div>
                     </div>
                     <div class="myInputRange">
-                        <input type="range" min="1" max="100" value="1" class="myRangeBar" id="myRange3"  onclick="atualizaValor(myRange3, valor3); atualizaCirculo(circulo1, myRange1);" onmousemove="atualizaValor(myRange3, valor3); atualizaCirculo(circulo3, myRange3);">
-                        <h2 class="text">Valor</h2>
+                        <input type="range" min="1" max="100" value="1" class="myRangeBar" onclick="atualiza(box3);" onmousemove="atualiza(box3);">                      <h2 class="text">Valor</h2>
                     </div>
                 </div>
             </div>
         </div>
     </body>
-
 </html>
